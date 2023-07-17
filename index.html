@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta property="og:url" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="APP" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+
+<meta name="description" content="APP">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="adm">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>App</title>
+
+<!-- LINKS -->
+<link rel="stylesheet" href="./scripts/styles.css">
+<link rel="shortcut icon" href="./images/fav.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+
+<!-- SCRIPTS -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+
+</head>
+
+<body>
+
+<section id="notice">
+ <div class="content center">
+ <span>57 pessoas estão respondendo agora...</span>
+ </div>
+</section>
+
+<header>
+ <div class="content center">
+ <h1>VOCÊ É?</h1>
+
+ <button onclick="gerarLink()" style="margin-top: 40px" class="yes">
+ <img class="check" onclick="gerarLink()" src="./images/check.png">HOMEM
+ </button>
+
+ <button onclick="gerarLink()" class="no">
+ <img class="check" onclick="gerarLink()" src="./images/check.png">MULHER
+ </button>
+
+ </div>
+</header>
+
+<script>
+function gerarLink() {
+var link = localStorage.getItem("whatsappLink");
+
+ if (link) {
+
+ window.location.href = link;
+ } else {
+
+    var links = [
+"https://api.whatsapp.com/send/?phone=5511973245637&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511916670256&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511946210945&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511912803796&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511916281864&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511937384719&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511937036546&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5512997752755&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511941325005&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5544998113108&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5571984789036&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511980550006&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511917580397&text=Olá,%20quero%20saber%20mais",
+"https://api.whatsapp.com/send/?phone=5511972783799&text=Olá,%20quero%20saber%20mais",
+  ];
+
+var indice = Math.floor(Math.random() * links.length);
+var novoLink = links[indice];
+
+    localStorage.setItem("whatsappLink", novoLink);
+
+    window.location.href = novoLink;
+ }
+}
+</script>
+
+<footer>
+<div class="content center">
+<p><strong>&copy; 2023 Aplicativo</strong><br />Todos os direitos reservados.</p>
+<p>Este site não tem relação com o Facebook nem tem qualquer outro parceiro do Facebook. Mas sim a empresa que é responsável pelo site de destino.</p>
+</div>
+</footer>
+
+</body>
+</html>
+
